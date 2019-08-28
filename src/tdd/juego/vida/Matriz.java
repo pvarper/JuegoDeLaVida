@@ -8,8 +8,8 @@ public class Matriz {
 		matriz = new int[filas][columnas];		
 	}
 	
-	public void cargarCelula(int filas, int columna) {
-		
+	public void cargarCelulaViva(int filas, int columna) {
+		matriz[filas-1][columna-1]=1;
 	}
 	
 	public void pintarMatriz() {
@@ -23,7 +23,8 @@ public class Matriz {
 	
 	public static void main(String[] args) {
 		Matriz m= new Matriz();
-		m.cargarMatriz(10,12);
+		m.cargarMatriz(7,12);
+		m.cargarCelulaViva(5, 5);
 		m.pintarMatriz();
 	}
 

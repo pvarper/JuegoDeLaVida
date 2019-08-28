@@ -40,16 +40,16 @@ public class JuegoTest {
 	@Test
 	public void cargarMatrizCelulasVivas() {
 		Matriz matriz= new Matriz();
+		matriz.cargarMatriz(7, 12);
+		
 		int coordenadaFila=5;
 		int coordenadaColumna=5;
-
-		matriz.cargarMatriz(7, 12);
-		matriz.cargarCelula(coordenadaFila, coordenadaColumna);
+		matriz.cargarCelulaViva(coordenadaFila, coordenadaColumna);
 		
 		int expectedCelula=1;
 
 		
-		assertEquals(expectedCelula, matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
+		assertEquals(expectedCelula, matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
 		
 	}
 
