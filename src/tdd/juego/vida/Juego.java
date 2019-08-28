@@ -23,29 +23,29 @@ public class Juego {
 
 		int cantidadVecinos = 0;
 		try {
-			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna - 1] == celulaViva) {
+			if (celulaViva(coordenadaFila - 1, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna] == celulaViva) {
+			if (celulaViva(coordenadaFila - 1, coordenadaColumna)) {
 				cantidadVecinos++;
 			}
 			 
-			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna + 1] == celulaViva) {
+			if (celulaViva(coordenadaFila - 1, coordenadaColumna + 1)) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila][coordenadaColumna - 1] == celulaViva) {
+			if (celulaViva(coordenadaFila, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila][coordenadaColumna + 1] == celulaViva) {
+			if (celulaViva(coordenadaFila , coordenadaColumna + 1)) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna - 1] == celulaViva) {
+			if (celulaViva(coordenadaFila + 1, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna] == celulaViva) {
+			if (celulaViva(coordenadaFila + 1, coordenadaColumna )) {
 				cantidadVecinos++;
 			}
-			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna + 1] == celulaViva) {
+			if (celulaViva(coordenadaFila +1, coordenadaColumna +1)) {
 				cantidadVecinos++;
 			}
 		} catch (java.lang.ArrayIndexOutOfBoundsException e) {

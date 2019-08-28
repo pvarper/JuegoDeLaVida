@@ -45,6 +45,7 @@ public class JuegoTest {
 		
 		int coordenadaFila=5;
 		int coordenadaColumna=5;
+		
 		int[][]matriz=juego.cargarCelulaViva(coordenadaFila, coordenadaColumna);
 		
 		int expectedCelula=1;
@@ -76,7 +77,7 @@ public class JuegoTest {
 		int coordenadaFila=2;
 		int coordenadaColumna=2;
 		boolean expectedCelula=true;	
-		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila-1, coordenadaColumna-1));
+		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila, coordenadaColumna));
 		
 	}
 	
@@ -91,7 +92,7 @@ public class JuegoTest {
 		int coordenadaFila=2;
 		int coordenadaColumna=2;
 		boolean expectedCelula=false;	
-		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila-1, coordenadaColumna-1));
+		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila, coordenadaColumna));
 		
 	}
 
