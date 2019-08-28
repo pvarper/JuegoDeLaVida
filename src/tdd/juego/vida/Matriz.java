@@ -5,12 +5,18 @@ public class Matriz {
 	int[][] matriz;
 	
 	public void cargarMatriz(int filas, int columnas) {
-		matriz = new int[filas][columnas];		
+		this.matriz = new int[filas][columnas];		
 	}
 	
 	public void cargarCelulaViva(int filas, int columna) {
-		matriz[filas-1][columna-1]=1;
+		this.matriz[filas-1][columna-1]=1;
 	}
+	
+	public boolean celulaViva(int coordenadaFila, int coordenadaColumna) {
+		
+		return false;
+	}
+	
 	
 	public void pintarMatriz() {
 		for (int i = 0; i < matriz.length; i++) { 
@@ -25,6 +31,7 @@ public class Matriz {
 		Matriz m= new Matriz();
 		m.cargarMatriz(7,12);
 		m.cargarCelulaViva(5, 5);
+		m.cargarCelulaViva(7, 12);
 		m.pintarMatriz();
 	}
 

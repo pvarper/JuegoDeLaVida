@@ -52,5 +52,23 @@ public class JuegoTest {
 		assertEquals(expectedCelula, matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
 		
 	}
+	
+	@Test
+	public void esCelulaViva() {
+		Matriz matriz= new Matriz();
+		matriz.cargarMatriz(7, 12);
+		
+		int coordenadaFila=5;
+		int coordenadaColumna=5;
+		
+		matriz.cargarCelulaViva(coordenadaFila, coordenadaColumna);
+		boolean esCelulaViva=matriz.celulaViva(coordenadaFila, coordenadaColumna);
+		
+		boolean expectedCelula=true;
+
+		
+		assertEquals(expectedCelula, esCelulaViva);
+		
+	}
 
 }
