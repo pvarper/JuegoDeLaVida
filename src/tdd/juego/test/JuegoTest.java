@@ -95,5 +95,21 @@ public class JuegoTest {
 		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila, coordenadaColumna));
 		
 	}
+	
+	@Test
+	public void testActualizarCelulaVivaAmuerta() {
+		Juego juego= new Juego();
+		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(1, 1);
+		juego.actualizarCelula();
+		
+		int coordenadaFila=1;
+		int coordenadaColumna=1;
+		
+		
+		int expectedCelula=0;	
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
+		
+	}
 
 }

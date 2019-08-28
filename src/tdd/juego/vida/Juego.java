@@ -2,7 +2,7 @@ package tdd.juego.vida;
 
 public class Juego {
 
-	Matriz matriz = new Matriz();
+	public Matriz matriz = new Matriz();
 	public static final int celulaViva = 1;
 	public static final int celulaMuerta = 0;
 
@@ -16,6 +16,11 @@ public class Juego {
 	}
 
 	public void jugar() {
+
+	}
+	
+	public void actualizarCelula() {
+		
 
 	}
 
