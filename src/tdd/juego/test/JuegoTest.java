@@ -58,13 +58,13 @@ public class JuegoTest {
 		Matriz matriz= new Matriz();
 		matriz.cargarMatriz(7, 12);
 		
-		int coordenadaFila=5;
-		int coordenadaColumna=5;
+
 		
-		matriz.cargarCelulaViva(coordenadaFila, coordenadaColumna);
-		boolean esCelulaViva=matriz.celulaViva(coordenadaFila, coordenadaColumna);
+		matriz.cargarCelulaViva(2, 2);
+
+		boolean esCelulaViva=matriz.celulaViva(7, 12);
 		
-		boolean expectedCelula=true;
+		boolean expectedCelula=false;
 
 		
 		assertEquals(expectedCelula, esCelulaViva);

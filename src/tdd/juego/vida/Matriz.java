@@ -13,8 +13,12 @@ public class Matriz {
 	}
 	
 	public boolean celulaViva(int coordenadaFila, int coordenadaColumna) {
+		boolean esCelulaViva=false;
+		if(getMatriz()[coordenadaFila-1][coordenadaColumna-1]==1) {
+			esCelulaViva=true;
+		}		
 		
-		return false;
+		return esCelulaViva;
 	}
 	
 	
@@ -32,6 +36,9 @@ public class Matriz {
 		m.cargarMatriz(7,12);
 		m.cargarCelulaViva(5, 5);
 		m.cargarCelulaViva(7, 12);
+		System.out.println(m.celulaViva(7, 12));
+		System.out.println(m.celulaViva(4, 6));
+		
 		m.pintarMatriz();
 	}
 
