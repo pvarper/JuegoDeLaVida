@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import tdd.juego.vida.Juego;
 import tdd.juego.vida.Matriz;
 
 public class JuegoTest {
@@ -39,32 +40,32 @@ public class JuegoTest {
 	
 	@Test
 	public void cargarMatrizCelulasVivas() {
-		Matriz matriz= new Matriz();
-		matriz.cargarMatriz(7, 12);
+		Juego juego= new Juego();
+		juego.cargarMatriz(7, 8);
 		
 		int coordenadaFila=5;
 		int coordenadaColumna=5;
-		matriz.cargarCelulaViva(coordenadaFila, coordenadaColumna);
+		int[][]matriz=juego.cargarCelulaViva(coordenadaFila, coordenadaColumna);
 		
 		int expectedCelula=1;
 
 		
-		assertEquals(expectedCelula, matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
+		assertEquals(expectedCelula, matriz[coordenadaFila-1][coordenadaColumna-1]);
 		
 	}
 	
 	@Test
 	public void esCelulaViva() {
-		Matriz matriz= new Matriz();
-		matriz.cargarMatriz(7, 12);
+		Juego juego= new Juego();
+		juego.cargarMatriz(7, 12);
 		
 
 		
-		matriz.cargarCelulaViva(2, 2);
+		juego.cargarCelulaViva(2, 2);
 
-		boolean esCelulaViva=matriz.celulaViva(7, 12);
+		boolean esCelulaViva=juego.celulaViva(2, 2);
 		
-		boolean expectedCelula=false;
+		boolean expectedCelula=true;
 
 		
 		assertEquals(expectedCelula, esCelulaViva);

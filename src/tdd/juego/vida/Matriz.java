@@ -8,18 +8,7 @@ public class Matriz {
 		this.matriz = new int[filas][columnas];		
 	}
 	
-	public void cargarCelulaViva(int filas, int columna) {
-		this.matriz[filas-1][columna-1]=1;
-	}
 	
-	public boolean celulaViva(int coordenadaFila, int coordenadaColumna) {
-		boolean esCelulaViva=false;
-		if(getMatriz()[coordenadaFila-1][coordenadaColumna-1]==1) {
-			esCelulaViva=true;
-		}		
-		
-		return esCelulaViva;
-	}
 	
 	
 	public void pintarMatriz() {
@@ -31,16 +20,7 @@ public class Matriz {
         }
 	}
 	
-	public static void main(String[] args) {
-		Matriz m= new Matriz();
-		m.cargarMatriz(7,12);
-		m.cargarCelulaViva(5, 5);
-		m.cargarCelulaViva(7, 12);
-		System.out.println(m.celulaViva(7, 12));
-		System.out.println(m.celulaViva(4, 6));
-		
-		m.pintarMatriz();
-	}
+	
 
 	public int[][] getMatriz() {
 		return matriz;
