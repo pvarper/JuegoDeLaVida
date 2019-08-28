@@ -4,9 +4,8 @@ public class Matriz {
 	
 	int[][] matriz;
 	
-	public int[][] cargarMatriz(int filas, int columnas) {
-		matriz = new int[filas][columnas];	
-		return matriz;
+	public void cargarMatriz(int filas, int columnas) {
+		matriz = new int[filas][columnas];		
 	}
 	
 	public void pintarMatriz() {
@@ -21,8 +20,18 @@ public class Matriz {
 	public static void main(String[] args) {
 		Matriz m= new Matriz();
 		m.cargarMatriz(10,12);
-		//m.pintarMatriz();
+		m.pintarMatriz();
 	}
+
+	public int[][] getMatriz() {
+		return matriz;
+	}
+
+	public void setMatriz(int[][] matriz) {
+		this.matriz = matriz;
+	}
+	
+	
 	
 
 }
