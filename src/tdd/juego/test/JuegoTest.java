@@ -10,7 +10,7 @@ import tdd.juego.vida.Matriz;
 public class JuegoTest {
 
 	@Test
-	public void cargarMatrizFila() {
+	public void testCargarMatrizFila() {
 		Matriz matriz= new Matriz();
 		int inputFila=2;
 
@@ -24,7 +24,7 @@ public class JuegoTest {
 	}
 	
 	@Test
-	public void cargarMatrizColumna() {
+	public void testCargarMatrizColumna() {
 		Matriz matriz= new Matriz();
 		int inputFila=4;
 		int inputColumna=12;
@@ -39,7 +39,7 @@ public class JuegoTest {
 	}
 	
 	@Test
-	public void cargarMatrizCelulasVivas() {
+	public void testCargarMatrizCelulasVivas() {
 		Juego juego= new Juego();
 		juego.cargarMatriz(7, 8);
 		
@@ -55,20 +55,23 @@ public class JuegoTest {
 	}
 	
 	@Test
-	public void esCelulaViva() {
+	public void testEsCelulaViva() {
 		Juego juego= new Juego();
 		juego.cargarMatriz(7, 12);
-		
-
-		
 		juego.cargarCelulaViva(2, 2);
-
-		boolean esCelulaViva=juego.celulaViva(2, 2);
-		
-		boolean expectedCelula=true;
-
-		
+		boolean esCelulaViva=juego.celulaViva(2, 2);	
+		boolean expectedCelula=true;	
 		assertEquals(expectedCelula, esCelulaViva);
+		
+	}
+	
+	@Test
+	public void testVerificarVecinosCelula() {
+		Juego juego= new Juego();
+		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(2, 2);
+		boolean expectedCelula=false;	
+		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, 2, 2));
 		
 	}
 
