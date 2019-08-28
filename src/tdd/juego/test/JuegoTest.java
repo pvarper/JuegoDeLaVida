@@ -66,12 +66,32 @@ public class JuegoTest {
 	}
 	
 	@Test
-	public void testVerificarVecinosCelula() {
+	public void testVerificarCelulaVive() {
 		Juego juego= new Juego();
 		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(1, 2);
 		juego.cargarCelulaViva(2, 2);
+		juego.cargarCelulaViva(1, 1);
+		
+		int coordenadaFila=2;
+		int coordenadaColumna=2;
+		boolean expectedCelula=true;	
+		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila-1, coordenadaColumna-1));
+		
+	}
+	
+	@Test
+	public void testVerificarCelulaMuere() {
+		Juego juego= new Juego();
+		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(1, 2);
+		juego.cargarCelulaViva(2, 2);
+		//juego.cargarCelulaViva(1, 1);
+		
+		int coordenadaFila=2;
+		int coordenadaColumna=2;
 		boolean expectedCelula=false;	
-		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, 2, 2));
+		assertEquals(expectedCelula, juego.verificarCelulaViveMuere(1, coordenadaFila-1, coordenadaColumna-1));
 		
 	}
 

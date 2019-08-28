@@ -3,11 +3,10 @@ package tdd.juego.vida;
 public class Juego {
 
 	Matriz matriz = new Matriz();
-	public static final int celulaViva=1;
-	public static final int celulaMuerta=0;
+	public static final int celulaViva = 1;
+	public static final int celulaMuerta = 0;
 
 	public static void main(String[] args) throws InterruptedException {
-		
 
 	}
 
@@ -18,15 +17,53 @@ public class Juego {
 
 	public void jugar() {
 
-		
-
 	}
 
-	public boolean verificarCelulaViveMuere(int celulaViva, int coordenadaFila, int coordenadaColumnsa) {
+	public boolean verificarCelulaViveMuere(int celulaEstado, int coordenadaFila, int coordenadaColumna) {
+
+		int cantidadVecinos = 0;
+		try {
+			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna - 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna] == celulaViva) {
+				cantidadVecinos++;
+			}
+			 
+			if (matriz.matriz[coordenadaFila - 1][coordenadaColumna + 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila][coordenadaColumna - 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila][coordenadaColumna + 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna - 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna] == celulaViva) {
+				cantidadVecinos++;
+			}
+			if (matriz.matriz[coordenadaFila + 1][coordenadaColumna + 1] == celulaViva) {
+				cantidadVecinos++;
+			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
 		
-		return true;
+		// Si está muerta y tiene 3 o más vivas
+		if (celulaEstado==Juego.celulaMuerta && cantidadVecinos == 3) {
+			return true;
+		}
+		// si está viva y tiene 2 o 3 vivas sigue viva
+		if (celulaEstado==Juego.celulaViva && (cantidadVecinos == 2 || cantidadVecinos == 3)) {
+			return true;
+		}
+		// de lo contrario muere
+		return false;
 	}
-	
+
 	public int[][] cargarCelulaViva(int filas, int columna) {
 		matriz.getMatriz()[filas - 1][columna - 1] = celulaViva;
 		return matriz.getMatriz();
