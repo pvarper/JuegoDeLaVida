@@ -21,5 +21,19 @@ public class JuegoTest {
 		assertEquals(expectedFila, matrizCargada.length);
 		
 	}
+	
+	@Test
+	public void cargarMatrizColumna() {
+		Matriz matriz= new Matriz();
+		int inputColumna=2;
+
+		int[][]matrizCargada=matriz.cargarMatriz(0, inputColumna);
+		
+		int expectedColumna=2;
+
+		
+		assertEquals(expectedColumna, matrizCargada.length);
+		
+	}
 
 }
