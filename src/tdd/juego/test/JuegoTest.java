@@ -9,14 +9,14 @@ import tdd.juego.vida.Matriz;
 public class JuegoTest {
 
 	@Test
-	public void cargarMatrizFilaColumna() {
+	public void cargarMatrizFila() {
 		Matriz matriz= new Matriz();
 		int inputFila=2;
-		int inputColumna=4;
-		int[][]matrizCargada=matriz.cargarMatriz(inputFila, inputColumna);
+
+		int[][]matrizCargada=matriz.cargarMatriz(inputFila, 0);
 		
 		int expectedFila=2;
-		int expectedColumna=4;
+
 		
 		assertEquals(expectedFila, matrizCargada.length);
 		
