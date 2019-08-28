@@ -37,20 +37,20 @@ public class JuegoTest {
 		
 	}
 	
-//	@Test
-//	public void cargarMatrizCelulasVivas() {
-//		Matriz matriz= new Matriz();
-//		int inputFila=4;
-//		int inputColumna=12;
-//
-//		int[][]matrizCargada=matriz.cargarMatriz(inputFila, inputColumna);
-//		matriz.cargarCelula();
-//		
-//		int expectedColumna=1;
-//
-//		
-//		assertEquals(expectedColumna, matrizCargada[0].length);
-//		
-//	}
+	@Test
+	public void cargarMatrizCelulasVivas() {
+		Matriz matriz= new Matriz();
+		int coordenadaFila=5;
+		int coordenadaColumna=5;
+
+		matriz.cargarMatriz(7, 12);
+		matriz.cargarCelula(coordenadaFila, coordenadaColumna);
+		
+		int expectedCelula=1;
+
+		
+		assertEquals(expectedCelula, matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
+		
+	}
 
 }

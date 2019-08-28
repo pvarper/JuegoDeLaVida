@@ -8,6 +8,10 @@ public class Matriz {
 		matriz = new int[filas][columnas];		
 	}
 	
+	public void cargarCelula(int filas, int columna) {
+		
+	}
+	
 	public void pintarMatriz() {
 		for (int i = 0; i < matriz.length; i++) { 
             for (int j = 0; j < matriz[i].length; j++) {
