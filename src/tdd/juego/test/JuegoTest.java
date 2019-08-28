@@ -25,14 +25,15 @@ public class JuegoTest {
 	@Test
 	public void cargarMatrizColumna() {
 		Matriz matriz= new Matriz();
-		int inputColumna=2;
+		int inputFila=4;
+		int inputColumna=12;
 
-		int[][]matrizCargada=matriz.cargarMatriz(0, inputColumna);
+		int[][]matrizCargada=matriz.cargarMatriz(inputFila, inputColumna);
 		
-		int expectedColumna=2;
+		int expectedColumna=12;
 
 		
-		assertEquals(expectedColumna, matrizCargada.length);
+		assertEquals(expectedColumna, matrizCargada[0].length);
 		
 	}
 
