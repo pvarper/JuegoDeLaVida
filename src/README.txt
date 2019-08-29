@@ -17,7 +17,7 @@ juego.cargarCelulaViva(1, 2);
 		juego.cargarCelulaViva(2, 1);
 		juego.cargarCelulaViva(2, 3);
 
-4.- Jugar
+4.- Jugar (desde un IDE)
 
 		juego.matriz.pintarMatriz();
 		Thread.sleep(1000);
@@ -30,3 +30,10 @@ juego.cargarCelulaViva(1, 2);
 			Thread.sleep(1000);
 			cont = cont + 1;
 		}
+
+O tambien ejecutar de cmd el siguiente comando
+
+
+java -jar D:\workspace\JuegoDeLaVida\bin\JuegoDeLaVida.jar
+
+Tomar en cuenta donde se descarga el proyecto

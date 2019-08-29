@@ -20,18 +20,14 @@ public static void main(String[] args) throws InterruptedException {
 		juego.matriz.pintarMatriz();
 		Thread.sleep(1000);
 		juego.limpiar();
-
 		int cont = 0;
 		while (cont < 50) {
 			juego.jugar();
 			juego.matriz.pintarMatriz();
 			juego.limpiar();
-
 			Thread.sleep(1000);
-
 			cont = cont + 1;
 		}
-
 	}
 
 }
