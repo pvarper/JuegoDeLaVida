@@ -111,5 +111,22 @@ public class JuegoTest {
 		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
 		
 	}
+	
+	@Test
+	public void testActualizarCelulaMuertaAviva() {
+		Juego juego= new Juego();
+		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(2, 2);
+		juego.cargarCelulaViva(1, 2);
+		juego.actualizarCelula();
+		
+		int coordenadaFila=1;
+		int coordenadaColumna=1;
+		
+		
+		int expectedCelula=1;	
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
+		
+	}
 
 }

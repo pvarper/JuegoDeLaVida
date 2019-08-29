@@ -50,6 +50,7 @@ public class Juego {
 			if (celulaViva(coordenadaFila - 1, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
+			
 			if (celulaViva(coordenadaFila - 1, coordenadaColumna)) {
 				cantidadVecinos++;
 			}
