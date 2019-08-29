@@ -20,7 +20,26 @@ public class Juego {
 	}
 	
 	public void actualizarCelula() {
-		
+		boolean estadoCelula;
+		for (int i = 0; i < matriz.matriz.length; i++) {
+			for (int j = 0; j < matriz.matriz[i].length; j++) {
+				int celula = matriz.matriz[i][j];
+				// Si la célula está muerta
+				if (celula == celulaMuerta) {
+					// puede nacer o seguir muerta
+					estadoCelula = verificarCelulaViveMuere(celulaMuerta, i, j);
+				} // Si la célula está viva
+				else {
+					// puede sobrevivir o morir
+					estadoCelula = verificarCelulaViveMuere(celulaViva, i, j);
+				}
+				if (estadoCelula) {
+					matriz.matriz[i][j] = celulaViva;
+				} else {
+					matriz.matriz[i][j] = celulaMuerta;
+				}
+			}
+		}
 
 	}
 
@@ -54,7 +73,7 @@ public class Juego {
 				cantidadVecinos++;
 			}
 		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-			e.printStackTrace();
+			
 		}
 		
 		// Si está muerta y tiene 3 o más vivas
