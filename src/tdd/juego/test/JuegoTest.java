@@ -11,47 +11,48 @@ public class JuegoTest {
 
 	@Test
 	public void testCargarMatrizFila() {
-		Matriz matriz= new Matriz();
+
+		Juego juego= new Juego();
 		int inputFila=2;
 
-		matriz.cargarMatriz(inputFila, 0);
+		juego.matriz.cargarMatriz(inputFila, 0);
 		
 		int expectedFila=2;
 
 		
-		assertEquals(expectedFila, matriz.getMatriz().length);
+		assertEquals(expectedFila, juego.matriz.getMatriz().length);
 		
 	}
 	
 	@Test
 	public void testCargarMatrizColumna() {
-		Matriz matriz= new Matriz();
+		Juego juego= new Juego();
 		int inputFila=4;
 		int inputColumna=12;
 
-		matriz.cargarMatriz(inputFila, inputColumna);
+		juego.matriz.cargarMatriz(inputFila, inputColumna);
 		
 		int expectedColumna=12;
 
 		
-		assertEquals(expectedColumna, matriz.getMatriz()[0].length);
+		assertEquals(expectedColumna, juego.matriz.getMatriz()[0].length);
 		
 	}
 	
 	@Test
 	public void testCargarMatrizCelulasVivas() {
 		Juego juego= new Juego();
-		juego.cargarMatriz(7, 8);
+		juego.cargarMatriz(7, 8);//8 filas y 9 columnas
 		
-		int coordenadaFila=5;
-		int coordenadaColumna=5;
+		int coordenadaFila=5;//6
+		int coordenadaColumna=5;//6
 		
-		int[][]matriz=juego.cargarCelulaViva(coordenadaFila, coordenadaColumna);
+		juego.cargarCelulaViva(coordenadaFila, coordenadaColumna);
 		
 		int expectedCelula=1;
 
 		
-		assertEquals(expectedCelula, matriz[coordenadaFila-1][coordenadaColumna-1]);
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
 		
 	}
 	
@@ -118,6 +119,8 @@ public class JuegoTest {
 		juego.cargarMatriz(4, 4);
 		juego.cargarCelulaViva(2, 2);
 		juego.cargarCelulaViva(1, 2);
+		juego.cargarCelulaViva(2, 1);
+		juego.matriz.pintarMatriz();
 		juego.actualizarCelula();
 		
 		int coordenadaFila=1;
@@ -125,7 +128,7 @@ public class JuegoTest {
 		
 		
 		int expectedCelula=1;	
-		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
 		
 	}
 

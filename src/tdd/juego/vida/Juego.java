@@ -23,9 +23,9 @@ public class Juego {
 		boolean estadoCelula;
 		for (int i = 0; i < matriz.matriz.length; i++) {
 			for (int j = 0; j < matriz.matriz[i].length; j++) {
-				int celula = matriz.matriz[i][j];
+				
 				// Si la célula está muerta
-				if (celula == celulaMuerta) {
+				if (!celulaViva(i, j)) {
 					// puede nacer o seguir muerta
 					estadoCelula = verificarCelulaViveMuere(celulaMuerta, i, j);
 				} // Si la célula está viva
@@ -34,7 +34,7 @@ public class Juego {
 					estadoCelula = verificarCelulaViveMuere(celulaViva, i, j);
 				}
 				if (estadoCelula) {
-					matriz.matriz[i][j] = celulaViva;
+					cargarCelulaViva(i, j);
 				} else {
 					matriz.matriz[i][j] = celulaMuerta;
 				}
@@ -50,26 +50,45 @@ public class Juego {
 			if (celulaViva(coordenadaFila - 1, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
-			
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila - 1, coordenadaColumna)) {
 				cantidadVecinos++;
 			}
-			 
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try { 
 			if (celulaViva(coordenadaFila - 1, coordenadaColumna + 1)) {
 				cantidadVecinos++;
 			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila , coordenadaColumna + 1)) {
 				cantidadVecinos++;
 			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila + 1, coordenadaColumna - 1)) {
 				cantidadVecinos++;
 			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila + 1, coordenadaColumna )) {
 				cantidadVecinos++;
 			}
+		} catch (java.lang.ArrayIndexOutOfBoundsException e) {
+		}
+		try {
 			if (celulaViva(coordenadaFila +1, coordenadaColumna +1)) {
 				cantidadVecinos++;
 			}
@@ -90,13 +109,13 @@ public class Juego {
 	}
 
 	public int[][] cargarCelulaViva(int filas, int columna) {
-		matriz.getMatriz()[filas - 1][columna - 1] = celulaViva;
+		matriz.getMatriz()[filas][columna] = celulaViva;
 		return matriz.getMatriz();
 	}
 
 	public boolean celulaViva(int coordenadaFila, int coordenadaColumna) {
 		boolean esCelulaViva = false;
-		if (matriz.getMatriz()[coordenadaFila - 1][coordenadaColumna - 1] == celulaViva) {
+		if (matriz.getMatriz()[coordenadaFila][coordenadaColumna] == celulaViva) {
 			esCelulaViva = true;
 		}
 
