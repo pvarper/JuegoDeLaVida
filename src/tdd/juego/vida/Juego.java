@@ -6,9 +6,7 @@ public class Juego {
 	public static final int celulaViva = 1;
 	public static final int celulaMuerta = 0;
 
-	public static void main(String[] args) throws InterruptedException {
-
-	}
+	
 
 	public void cargarMatriz(int filas, int columnas) {
 		matriz.cargarMatriz(filas, columnas);
@@ -16,6 +14,7 @@ public class Juego {
 	}
 
 	public void jugar() {
+		actualizarCelula();
 
 	}
 	

@@ -1,11 +1,10 @@
 package tdd.juego.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import tdd.juego.vida.Juego;
-import tdd.juego.vida.Matriz;
 
 public class JuegoTest {
 
@@ -154,5 +153,7 @@ public class JuegoTest {
 		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
 		
 	}
+	
+	
 
 }
