@@ -1,3 +1,18 @@
+La estrategia aplicada para la solucion de este juego fue:
+
+1.- Utilizar una matriz de enteros donde 0 son celulas muertas y 1 son celulas vivas
+
+2.- Se aplico TDD para la creacion de los metodos que se necesitarian para que el juego funcione
+
+3.- Se realizaron test incialmente fallidos y luego se refactorizo el codigo para cumplir con test
+
+4.- Para solucionar el juego, lo que se hizo fue recorrer la matriz casilla por casilla y preguntar si era celula muerta o viva.
+
+5.- Sabiendo si era celula viva o muerta se verificaban las celulas vecinas y se inicializaba un contador para poder aplicar las reglas descritas en el juego.
+	regla 1.- si la celula esta viva y tiene dos o tres celulas vecinas vivas, esta permanece viva, pero si tiene mas de 3, esta muere por sobrepoblacion.
+	regla 2.- si la celula esta muerta y tres celulas vecinas vivas, la celula revive
+
+
 Para ejecutar el juego debera abrir la clase JuegoCliente y seguir los siguientes pasos
 
 1.-Inicializar la clase Juego
