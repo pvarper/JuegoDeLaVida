@@ -109,7 +109,7 @@ public class JuegoTest {
 		
 		
 		int expectedCelula=0;	
-		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila-1][coordenadaColumna-1]);
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
 		
 	}
 	
@@ -120,7 +120,7 @@ public class JuegoTest {
 		juego.cargarCelulaViva(2, 2);
 		juego.cargarCelulaViva(1, 2);
 		juego.cargarCelulaViva(2, 1);
-		juego.matriz.pintarMatriz();
+		
 		juego.actualizarCelula();
 		
 		int coordenadaFila=1;
@@ -128,6 +128,29 @@ public class JuegoTest {
 		
 		
 		int expectedCelula=1;	
+		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
+		
+	}
+	
+	@Test
+	public void testActualizarCelulaVivaAmuertaPorSuperPoblacion() {
+		Juego juego= new Juego();
+		juego.cargarMatriz(4, 4);
+		juego.cargarCelulaViva(1, 1);
+		juego.cargarCelulaViva(0,0);
+		juego.cargarCelulaViva(0, 1);
+		juego.cargarCelulaViva(0, 2);
+		juego.cargarCelulaViva(1, 0);
+		juego.cargarCelulaViva(1, 2);
+		juego.matriz.pintarMatriz();
+		juego.actualizarCelula();
+		System.out.println("------");
+		juego.matriz.pintarMatriz();
+		int coordenadaFila=1;
+		int coordenadaColumna=1;
+		
+		
+		int expectedCelula=0;	
 		assertEquals(expectedCelula, juego.matriz.getMatriz()[coordenadaFila][coordenadaColumna]);
 		
 	}
